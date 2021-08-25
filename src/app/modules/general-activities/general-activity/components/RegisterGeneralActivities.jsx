@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from 'antd';
 import GeneralActivitiesForm from "./GeneralActivitiesForm";
-import {add} from "../../../utilities/styles/buttonsCrud";
-import ModalComponent from "../../../common/modal-component/ModalComponent";
+import {add} from "../../../../utils/styles/buttonsCrud";
+import ModalComponent from "../../../../common/modal-component/ModalComponent";
 
 const RegisterGeneralActivities = ({modalAction,propsModal}) => {
 	

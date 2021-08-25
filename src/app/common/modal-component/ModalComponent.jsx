@@ -1,5 +1,5 @@
 import { Button, Modal } from 'antd';
-import {add} from "../../utilities/styles/buttonsCrud";
+import {add} from "../../utils/styles/buttonsCrud";
 
 const ModalComponent = ({action, propsModal, component}) => {
 	

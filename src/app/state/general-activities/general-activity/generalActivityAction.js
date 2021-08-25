@@ -1,7 +1,7 @@
-import * as constants from '../constants';
-import {END_GENERAL_ACTIVITY} from "../constants";
+import * as constants from '../../constants';
+import {END_GENERAL_ACTIVITY} from "../../constants";
 import {createAction} from "@reduxjs/toolkit/src/createAction";
-import axios from "../../api/configAxios";
+import axios from "../../../api/configAxios";
 
 export const allGeneralActivity = createAction(constants.SET_ALL_GENERAL_ACTIVITY);
 
@@ -14,16 +14,30 @@ export const faetchAllGeneralActivity = () => ({
 	}
 });
 
-export const fetchAllGeneralActivity = () => async (dispatch) => {
+export const fetchAllGeneralActivity = (postProcessSuccess, postProcessError) => async (dispatch) => {
 	try {
 		let response = await axios.get('general-activity');
 		dispatch(allGeneralActivity(response));
-	}
-	catch (e) {
-	
+		postProcessSuccess(response);
+	} catch (e) {
+		validateToken(e);
+		if (!e.response) console.warn(e);
+		else {
+			if (e.response && e.response.status === 403)
+				console.log('sacar usuario')
+			if (e.response.data.error) {
+				if (postProcessError) postProcessError(e.response.data);
+			}
+		}
+		postProcessError(e.response.data);
 	}
 }
 
+	function validateToken(err) {
+		if (err?.response?.data?.message === 'Token has expired') {
+			console.log('debe loguearse de nuevo')
+		}
+	}
 
 
 export const createGeneralActivity = (data, onSuccess, onError) => ({

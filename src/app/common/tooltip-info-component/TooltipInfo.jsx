@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button,Tooltip } from "antd";
-import { getFormatDate } from '../../utilities/date/handleDate';
-import {info} from "../../utilities/styles/buttonsCrud";
+import { getFormatDate } from '../../utils/date/handleDate';
+import {info} from "../../utils/styles/buttonsCrud";
 
 export const TooltipInfo = (record) => {
 		let createdAt = getFormatDate(record.created_at);

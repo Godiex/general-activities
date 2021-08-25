@@ -4,17 +4,17 @@ import {PageHeader, Table, Tag} from "antd";
 import RegisterGeneralActivities from "./components/RegisterGeneralActivities";
 import GeneralActivitiesDelete from "./components/GeneralActivitiesDelete";
 import {GeneralActivitiesProvider} from "./components/GeneralActivitiesProvider";
-import { getColumnSearchProps } from '../../utilities/filter-table/handleFilterTable';
-import TooltipInfo from '../../common/tooltip-info-component/TooltipInfo';
+import { getColumnSearchProps } from '../../../utils/filter-table/handleFilterTable';
+import TooltipInfo from '../../../common/tooltip-info-component/TooltipInfo';
 import { fetchAllActivatedUsers } from '../../../../redux/actions/Configuration/usersAction';
-import {error, success} from "../../utilities/notification/Notification";
+import {error, success} from "../../../utils/notification/Notification";
 import UpdateGeneralActivities from "./components/UpdateGeneralActivities";
 import EndActivities from "./components/EndActivity";
 import {
 	createGeneralActivity,
 	fetchAllGeneralActivity,
 	updateGeneralActivityById
-} from '../../state/general-activities/generalActivityAction';
+} from '../../../state/general-activities/general-activity/generalActivityAction';
 
 
 const GeneralActivities = () => {

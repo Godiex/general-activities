@@ -1,6 +1,6 @@
 import axios from "axios";
 import {environment} from "../environments/environment";
-import {getToken} from "../../utilities/auth/auth";
+import {getToken} from "../../utils/auth/auth";
 
 const instance =  axios.create({
 	baseURL: environment.BASE_URL,
