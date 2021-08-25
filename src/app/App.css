@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
-}
+:root{
+  --ion-color-white: #ffffff;
+  --ion-color-black: #000000;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  --ion-color-primary: #2f3640;
+  --ion-color-primary-shade: #293038;
+  --ion-color-primary-tint: #444a53;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  --ion-color-secondary: #2980b9;
+  --ion-color-secondary-shade: #2471a3;
+  --ion-color-secondary-tint: #3e8dc0;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  --ion-color-tertiary: #5260ff;
+  --ion-color-tertiary-shade: #4854e0;
+  --ion-color-tertiary-tint: #6370ff;
 
-.App-link {
-  color: #61dafb;
-}
+  --ion-color-success: #2ecc71;
+  --ion-color-success-shade: #28b463;
+  --ion-color-success-tint: #43d17f;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  --ion-color-warning: #f39c12;
+  --ion-color-warning-shade: #d68910;
+  --ion-color-warning-tint: #f4a62a;
+
+  --ion-color-danger: #e74c3c;
+  --ion-color-danger-shade: #cb4335;
+  --ion-color-danger-tint: #e95e50;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  --ion-color-medium: #92949c;
+  --ion-color-medium-shade: #808289;
+  --ion-color-medium-tint: #9d9fa6;
+
+  --ion-color-light: #ecf0f1;
+  --ion-color-light-shade: #d0d3d4;
+  --ion-color-light-tint: #eef2f2;
 }

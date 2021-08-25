@@ -11,7 +11,7 @@ export const END_GENERAL_ACTIVITY = "END_GENERAL_ACTIVITY";
 export const GET_ACTIVE_USER  = "GET_ACTIVE_USER";
 //#endregion
 
-//#region
+//#region UserAuth
 export const SET_USER_AUTHENTICATION  = "SET_USER_AUTHENTICATION";
 export const RESET_USER_AUTHENTICATED  = "RESET_USER_AUTHENTICATED";
 //#endregion

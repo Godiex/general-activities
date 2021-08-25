@@ -12,7 +12,7 @@ export const add = {
 
 export const update = {
 	...baseButton,
-	style : { background: '#ffa247', borderColor: '#ffa247' },
+	style : {background: '#ffa247', borderColor: '#ffa247'},
 	icon :  <EditOutlined />
 }
 

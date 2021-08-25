@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { Button, Modal } from 'antd';
 import {validatePermission} from "../../../handle/PermissionMethods/PermissionMethods";
-import * as constants from "../../../../redux/constants";
+import * as constants from "../../../../state/constants/constantActions";
 import {EditOutlined} from '@ant-design/icons';
 import GeneralActivitiesForm from "./GeneralActivitiesForm";
 

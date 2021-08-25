@@ -3,7 +3,7 @@ import { message, Popconfirm, Tooltip, Button } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 import { GeneralActivitiesContext } from "./GeneralActivitiesProvider";
 import { QuestionCircleOutlined } from '@ant-design/icons';
-import { deleteGeneralActivityById } from '../../../../redux/actions/Configuration/GeneralActivityAction';
+import { deleteGeneralActivityById } from '../../../../state/actions/Configuration/GeneralActivityAction';
 import {useDispatch} from "react-redux";
 import { errorGlobal, warning, success } from "../../../handle/Notification/Notification";
 

@@ -2,7 +2,7 @@ import { Button, Modal } from 'antd';
 import React, {useState} from "react";
 import { EditOutlined } from "@ant-design/icons";
 import { validatePermission } from "../../../../handle/PermissionMethods/PermissionMethods";
-import * as constants from "../../../../../redux/constants";
+import * as constants from "../../../../../state/constants";
 import FormEndActivities from "./FormEndActivity";
 
 const EndActivities = () => {
@@ -11,11 +11,7 @@ const EndActivities = () => {
 	const showModal = () => setIsModalVisible(true);
 	const handleCancel = () => setIsModalVisible(false);
 	const onClose = () => setIsModalVisible(false);
-
-	if (!validatePermission(constants.CREATE_GENERAL_ACTIVITY_PERMISSION)) {
-		return <></>;
-	}
-
+	
 	return (
 		<>
 			<Button
@@ -26,7 +22,7 @@ const EndActivities = () => {
 			/>
 			<Modal
 				footer={false}
-				title={'Finalizar Actividad General'}
+				title={'Finalize General Activity'}
 				visible={isModalVisible}
 				onCancel={handleCancel}
 			>

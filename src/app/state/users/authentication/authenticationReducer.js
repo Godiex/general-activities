@@ -1,4 +1,4 @@
-import {SET_USER_AUTHENTICATION, RESET_USER_AUTHENTICATED} from '../../constants'
+import {SET_USER_AUTHENTICATION, RESET_USER_AUTHENTICATED} from '../../constants/constantActions'
 
 const defaultState = {
     userId: null,

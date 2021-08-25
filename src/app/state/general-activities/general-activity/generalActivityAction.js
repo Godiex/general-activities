@@ -1,7 +1,7 @@
-import * as constants from '../../constants';
-import {END_GENERAL_ACTIVITY} from "../../constants";
+import * as constants from '../../constants/constantActions';
+import {END_GENERAL_ACTIVITY} from "../../constants/constantActions";
 import {createAction} from "@reduxjs/toolkit/src/createAction";
-import axios from "../../../api/configAxios";
+import axios from "../../../api/config";
 
 export const allGeneralActivity = createAction(constants.SET_ALL_GENERAL_ACTIVITY);
 

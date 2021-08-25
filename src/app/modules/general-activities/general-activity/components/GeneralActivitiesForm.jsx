@@ -1,5 +1,5 @@
 import { Form, Input, Button, Row, Col, DatePicker, Select } from 'antd';
-import { dateFormat } from '../../../handle/HandleDatePicker/HandleDate';
+import { dateFormat } from '../../../../utils/date/handleDate';
 import {Option} from "antd/es/mentions";
 import React, {useContext, useEffect} from "react";
 import {useSelector} from "react-redux";
@@ -11,7 +11,7 @@ const config = {
 		{
 			type: 'object',
 			required: true,
-			message: 'Por favor selecciona !',
+			message: 'Please select one option !',
 		},
 	],
 };
@@ -21,7 +21,7 @@ const GeneralActivitiesForm = ({textAction, onClose}) => {
 	const [form] = Form.useForm();
 	const  {context}  = useContext(GeneralActivitiesContext);
 	const onFinish = context.generalActivity ? context.onFinishUpdate : context;
-	const validateMessages = { required: '${label} es requerido'};
+	const validateMessages = { required: `$\{label} es required`};
 	const users = useSelector(state => state['users']);
 	const onReset = () => form.resetFields();
 
@@ -35,12 +35,11 @@ const GeneralActivitiesForm = ({textAction, onClose}) => {
 		form.setFieldsValue({
 			scheduled: moment(context.generalActivity.scheduled),
 			activity: context.generalActivity.activity,
-			user_id: context.generalActivity.executing_user_id,
+			user_id: context.generalActivity['executing_user_id'],
 		})
 	}
 
 	const onAccept = async () => {
-		
 		let values = await getDataForm();
 		if(isActionRegister()){
 			await onFinish(values);
@@ -50,9 +49,7 @@ const GeneralActivitiesForm = ({textAction, onClose}) => {
 		else {
 			await onFinish(context.generalActivity.id, values);
 			onClose();
-		}	
-		
-			
+		}
 	}
 
 	const isActionRegister = () => {
@@ -80,19 +77,19 @@ const GeneralActivitiesForm = ({textAction, onClose}) => {
 					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
 						<Form.Item
 							name="user_id"
-							label="Usuario"
+							label="User Assigned"
 							rules={[{ required: true }]}
 						>
 							<Select
 								showSearch
 								style={{ width: '100%' }}
-								placeholder="Selecciona un usuario"
+								placeholder="select a user"
 								optionFilterProp="children"
 								filterOption={(input, option) =>
 									option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 								}
 							>
-								<Option value="">Seleccione...</Option>
+								<Option value="">Select...</Option>
 								{!Array.isArray(users) &&	users['_payload']?.map((item) => (
 									<Option value={item.id}>{item.name}</Option>
 								))}
@@ -101,9 +98,9 @@ const GeneralActivitiesForm = ({textAction, onClose}) => {
 					</Col>
 					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
 						<Form.Item name='scheduled'
-											 label="Fecha de Expiracion"
+											 label="Date expiration activity"
 											 {...config}
-											 rules={[{ required: true, message: 'La fecha es requerida', }]}>
+											 rules={[{ required: true, message: 'date expiration is required', }]}>
 							<DatePicker format={dateFormat} />
 						</Form.Item>
 					</Col>
@@ -111,7 +108,7 @@ const GeneralActivitiesForm = ({textAction, onClose}) => {
 				<Row gutter={16}>
 					<Col xs={24} sm={24} md={12} lg={12} xl={12}>
 						<Form.Item
-							label="Actividad"
+							label="Activity"
 							name="activity"
 							rules={[{ required: true }]}>
 							<Input.TextArea/>

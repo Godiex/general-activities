@@ -1,6 +1,6 @@
 import React, {createContext} from 'react';
 
-export const GeneralActivitiesContext = createContext();
+export const GeneralActivitiesContext = createContext({});
 
 export const GeneralActivitiesProvider = ({children,context}) => {
 	return (

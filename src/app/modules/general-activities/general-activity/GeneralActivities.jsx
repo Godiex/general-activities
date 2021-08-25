@@ -6,7 +6,6 @@ import GeneralActivitiesDelete from "./components/GeneralActivitiesDelete";
 import {GeneralActivitiesProvider} from "./components/GeneralActivitiesProvider";
 import { getColumnSearchProps } from '../../../utils/filter-table/handleFilterTable';
 import TooltipInfo from '../../../common/tooltip-info-component/TooltipInfo';
-import { fetchAllActivatedUsers } from '../../../../redux/actions/Configuration/usersAction';
 import {error, success} from "../../../utils/notification/Notification";
 import UpdateGeneralActivities from "./components/UpdateGeneralActivities";
 import EndActivities from "./components/EndActivity";
@@ -112,7 +111,6 @@ const GeneralActivities = () => {
 	
 	useEffect(() => {
 		dispatch(fetchAllGeneralActivity())
-		dispatch(fetchAllActivatedUsers())
 	}, []);
 	
 	useEffect(() => {

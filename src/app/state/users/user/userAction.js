@@ -1,4 +1,4 @@
-import {GET_ACTIVE_USER} from "../../constants";
+import {GET_ACTIVE_USER} from "../../constants/constantActions";
 
 export const fetchAllActivatedUsers = () => ({
 	type: constants.API,
