@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import {PageHeader} from "antd";
-
 const PageHeaderComponent = (props) => {
 	return (
 		<Fragment>
