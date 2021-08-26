@@ -1,9 +1,7 @@
 import {EditOutlined, DeleteOutlined, PlusOutlined, InfoOutlined} from "@ant-design/icons";
+import {baseButton} from "./button";
 
-const baseButton = {
-	type : 'primary',
-	size : "small",
-}
+
 
 export const add = {
 	...baseButton,

@@ -1,37 +1,37 @@
 
-.container{
-    background-image: url("../../../../../assets/images/pexels-breakingpic-3243.jpg");
-		background-repeat: no-repeat !important;;
-		background-size: cover !important;;
-		width: 100% !important;
+.wallpaper{
+    background-image: url("../../../../../assets/images/base-walpaper.png");
+    background-repeat: no-repeat !important;;
+    background-size: cover !important;
+    width: 100% !important;
     height: 100% !important;
-
 }
 .divForm{
     background-color: #ffff;
     clip-path: polygon(0% 0%, 50% 0%, 20% 100%, 0% 100%);
     padding-right: 120px;
     height: 100% !important;
+    padding-top: 1% !important;
     width: 100% !important;
 }
+
 .divForm .logo {
     min-width: 50px;
     min-height: 50px;
-    max-width: 120px;
-    max-height: 120px;
-    margin: 0px !important;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 !important;
+    margin-left: 1.5% !important;
     color: #fff !important;
     /* background: rgba(255, 255, 255, 0.3); */
 }
 
 .btnLogin{
-    background-color: #1263ce;
-    color: #FFFFFF;
     width: 100%;
     border-radius: 3px;
 }
 .form{
-    margin-top:90px
+    margin-top:90px !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -45,10 +45,20 @@
     .divForm .logo {
         min-width: 50px;
         min-height: 50px;
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 150px;
+        max-height: 150px;
         margin: 20px auto !important;
         color: #fff !important;
         /* background: rgba(255, 255, 255, 0.3); */
     }
   }
+
+@media screen and (max-width: 1200px) {
+    .wallpaper{
+        background-image: url("../../../../../assets/images/base-walpaper-screan-small.png");
+        background-repeat: no-repeat !important;;
+        background-size: cover !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

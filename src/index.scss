@@ -1,0 +1,44 @@
+body {
+	font-family: sans-serif !important;
+}
+
+a {
+	font-family: sans-serif !important;
+}
+/* tema dark */
+
+/* div, section, footer, nav,table, main, aside, th, td, tr, ul{
+    background-color: rgb(36, 36, 36) !important;
+    color: #ffffff !important;
+}
+span, h1, h2, h3, h4, h5, h6, p{
+    color: #ffffff !important;
+}
+header{
+    background-color: rgb(255, 255, 255) !important;
+    color: #ffffff !important;
+} */
+
+button {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+// css para propiedades que utilicen porcentaje
+
+@for $i from 0 through 100 {
+	//margin
+	.margin-#{$i}-porcent {
+		margin: 0% + $i !important;
+	}
+}
+
+// css para propiedades que utilicen unidades enteras
+@for $i from 0 through 1000 {
+	.margin-#{$i} {
+		margin: #{$i}px !important;
+	}
+
+	.margin-top-#{$i} {
+		margin-top: #{$i}px !important;
+	}
+}

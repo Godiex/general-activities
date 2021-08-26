@@ -1,20 +1,25 @@
-import {SET_USER_AUTHENTICATION, RESET_USER_AUTHENTICATED} from '../../constants/constantActions'
+import {SET_USER_AUTHENTICATION, RESET_USER_AUTHENTICATED, GET_LOGGED_USER} from '../../constants/constantActions'
+import {getUserLocalStorage, removeUserLocalStorage, setUserLocalStorage} from "../../../utils/auth/auth";
 
 const defaultState = {
-    userId: null,
-    email: null,
+    id: null,
+    name: null,
     token: null,
     isLoggedIn: false
 }
-const userInfo = localStorage.getItem('USER_INFO')
-const INITIAL_STATE = userInfo ? JSON.parse(userInfo) : defaultState
+const userInfo = getUserLocalStorage();
+const initialState = userInfo === {} ? JSON.parse(userInfo) : defaultState
 
-export default function authenticationReducer(state = INITIAL_STATE, action){
+export default function authenticationReducer(state = initialState, action){
     switch(action.type) {
         case SET_USER_AUTHENTICATION :
-            return { ...action.payload}
+            setUserLocalStorage(action.payload);
+            return {...action.payload}
+        case GET_LOGGED_USER :
+            return action.payload ? {...action.payload} : state;
         case RESET_USER_AUTHENTICATED :
-            return defaultState 
+            removeUserLocalStorage();
+            return defaultState;
         default:
             return state
     }

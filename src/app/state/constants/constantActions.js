@@ -14,4 +14,5 @@ export const GET_ACTIVE_USER  = "GET_ACTIVE_USER";
 //#region UserAuth
 export const SET_USER_AUTHENTICATION  = "SET_USER_AUTHENTICATION";
 export const RESET_USER_AUTHENTICATED  = "RESET_USER_AUTHENTICATED";
+export const GET_LOGGED_USER  = "GET_LOGGED_USER";
 //#endregion

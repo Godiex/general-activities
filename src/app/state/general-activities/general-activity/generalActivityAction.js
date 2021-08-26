@@ -1,5 +1,4 @@
 import * as constants from '../../constants/constantActions';
-import {END_GENERAL_ACTIVITY} from "../../constants/constantActions";
 import {createAction} from "@reduxjs/toolkit/src/createAction";
 import axios from "../../../api/config";
 

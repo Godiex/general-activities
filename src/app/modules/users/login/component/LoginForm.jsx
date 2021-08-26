@@ -1,6 +1,7 @@
 import {Button, Card, Form, Input} from "antd";
 import Spinner from "../../../../common/spinner/Spinner";
-import React from "react";
+import React, {useState} from "react";
+import { buttonPrimary } from "../../../../utils/styles/button";
 
 const layout = {
 	labelCol: {
@@ -20,19 +21,21 @@ const tailLayout = {
 	},
 };
 
-const FormLogin = ({loading, onFinish}) => {
+const FormLogin = ({onFinish}) => {
 	
 	const [form] = Form.useForm();
+	const [ loading, setLoading ] = useState(false);
 	const validateMessages = {
-		required: '$/{label} is required',
+		required: '${label} is required',
 		types: {
-			email: '$/{label} it is not a valid email',
-			password: '$/{label} only number'
+			email: '${label} is not a valid email!',
 		}
 	};
 	
-	const onLogin = () => {
-		let data = getDataForm();
+	const onLogin = async ()  => {
+		let data = await getDataForm();
+		setLoading(true);
+		onFinish(data, setLoading);
 	}
 	
 	const getDataForm = async () => {
@@ -50,19 +53,24 @@ const FormLogin = ({loading, onFinish}) => {
 			onFinish={onLogin}
 		>
 			<Form.Item
+				label={'Email'}
+				name='email'
+				defaultValue=""
 				rules={[
 					{
-						required: true
+						required: true,
+						type: 'email'
 					}
 				]}
 			>
 				<Input
-					defaultValue=""
 					placeholder="Email"
 					name="email"
 				/>
 			</Form.Item>
 			<Form.Item
+				defaultValue=''
+				label={'Password'}
 				name="password"
 				rules={[
 					{
@@ -70,13 +78,10 @@ const FormLogin = ({loading, onFinish}) => {
 					}
 				]}
 			>
-				<Input.Password
-					defaultValue=""
-					placeholder="Password"
-				/>
+				<Input.Password  placeholder="Password" />
 			</Form.Item>
 			{<Form.Item {...tailLayout}>
-				<Button disabled={loading} className="btnLogin" htmlType="submit">
+				<Button {...buttonPrimary} className={'btnLogin'} disabled={loading} htmlType="submit">
 					Log in
 				</Button>
 			</Form.Item>}
@@ -88,4 +93,5 @@ const FormLogin = ({loading, onFinish}) => {
 		</Form>
 	);
 }
+
 export default FormLogin;

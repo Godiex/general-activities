@@ -1,11 +1,10 @@
-import React, { Fragment ,useEffect } from "react";
+import React, { Fragment } from "react";
 import { connect } from 'react-redux';
 import { Layout } from "antd";
 import NavMenu from "./components/nav-menu/NavMenu";
 import FooterComponent from "./components/footer/FooterComponent";
 import HeaderComponent from "./components/header/HeaderComponent";
 import { useDispatch } from 'react-redux';
-import { fetchAllCustomer } from '../../../state/actions/Customer/CustomerAction';
 
 import { logoutUser } from '../../../state/actions/Configuration/authAction'
 
@@ -26,7 +25,6 @@ const LayoutComponent = ({user, dispatchLogoutAction}) => {
 						isLoggedIn={user.isLoggedIn} 
 						onLogout={dispatchLogoutAction} 
 						userName={user.name}
-						profile={user.profile}
 					/>
 					<Content
 						style={{
@@ -34,9 +32,7 @@ const LayoutComponent = ({user, dispatchLogoutAction}) => {
 							overflow: "initial",
 						}}
 					>
-						{/* RUTAS */}
 						<Routes />
-            {/* END RUTAS */}
 					</Content>
 					<FooterComponent />
 				</Layout>

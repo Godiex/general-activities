@@ -16,7 +16,7 @@ const FooterComponent = () => {
             zIndex:99,
         }
         }>
-           © 2014-2021 GPI Constructores. Todos los derechos Reservados.
+           © 2021-2021 GPI Task. Development of software application Diego Villa.
         </Footer>
     );
     
